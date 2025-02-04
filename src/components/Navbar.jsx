@@ -10,7 +10,7 @@ function download() {
 }
 export default function Navbar() {
   return (
-    <nav className=" p-3 max-w-sm flex justify-end gap-4 mx-auto ">
+    <nav className=" p-3 max-w-sm flex justify-end gap-4 mx-auto items-end ">
       <Button handleFunction={download}>Download CV</Button>
       <Menu />
     </nav>
