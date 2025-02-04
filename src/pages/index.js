@@ -1,11 +1,15 @@
 import Navbar from "@/components/Navbar";
-import Button from "@/components/Button";
-import Menu from "@/components/Button";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <HeroSection />
+      </main>
     </>
   );
 }
