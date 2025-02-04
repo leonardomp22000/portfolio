@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Button from "./Button";
+import Paragraph from "./Paragraph";
 export default function HeroSection() {
   return (
     <>
-      <section className=" max-w-sm mx-auto">
+      <section className=" max-w-sm mx-auto p-4">
         <h6 className="text-black text-base font-semibold font-poppins tracking-wide px-4">
           Hi I am
         </h6>
@@ -16,9 +17,7 @@ export default function HeroSection() {
         <h2 className="text-black text-5xl font-bold font-poppins leading-[57px] tracking-wider px-4 text-end">
           Engineer
         </h2>
-      </section>
 
-      <section>
         <Image
           src={"/images/ProfilePicture.webp"}
           alt="Profile picture"
@@ -27,17 +26,17 @@ export default function HeroSection() {
           priority
           className="mx-auto p-5"
         />
-      </section>
 
-      <section className="text-base font-poppins p-4 mx-auto text-center max-w-sm">
-        Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-        lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
-        pharetra
-      </section>
+        <Paragraph>
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
+          pharetra
+        </Paragraph>
 
-      <div className=" mx-auto text-center max-w-sm">
-        <Button handleFunction={() => console.log("Hola")}>Hire Me</Button>
-      </div>
+        <div className="text-center p-4">
+          <Button handleFunction={() => console.log("Hola")}>Hire Me</Button>
+        </div>
+      </section>
     </>
   );
 }
