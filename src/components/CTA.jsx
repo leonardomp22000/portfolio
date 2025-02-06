@@ -5,7 +5,7 @@ import Button from "./Button";
 export default function CTA() {
   return (
     <>
-      <section className="mx-auto max-w-sm text-center p-4 flex flex-col gap-5">
+      <section className="mx-auto max-w-md text-center p-4 flex flex-col gap-5 sm:max-w-xl ">
         <Title> Lets Design Together</Title>
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh

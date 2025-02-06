@@ -1,4 +1,4 @@
-export default function Input({ children }) {
+export default function Input() {
   return (
     <>
       <input

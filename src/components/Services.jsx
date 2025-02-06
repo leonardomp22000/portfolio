@@ -41,7 +41,7 @@ const services = [
 export default function Services() {
   return (
     <>
-      <section className="p-4 max-w-sm mx-auto text-center">
+      <section className="p-4 max-w-md mx-auto text-center sm:max-w-xl">
         <Title>Services</Title>
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
@@ -52,8 +52,9 @@ export default function Services() {
 
         <Swiper
           modules={[Pagination]}
-          spaceBetween={20}
-          slidesPerView={1}
+          spaceBetween={10}
+          slidesPerView={1.5}
+          centeredSlides={true}
           loop={true}
           pagination={{ clickable: true }}
           onSwiper={(swiper) => console.log(swiper)}
