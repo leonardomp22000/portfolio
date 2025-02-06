@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <>
       <section className="bg-[#e2e2e2] py-10">
-        <div className="mx-auto max-w-sm text-center">
+        <div className="mx-auto max-w-md text-center sm:max-w-xl">
           {services.map((service, index) => {
             return (
               <Button
@@ -38,6 +38,7 @@ export default function Footer() {
                     alt="Image"
                     width={30}
                     height={30}
+                    className="sm:w-9"
                   />
                 </a>
               );

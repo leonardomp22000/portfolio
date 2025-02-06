@@ -38,7 +38,7 @@ const projects = [
 export default function Projects() {
   return (
     <>
-      <section className=" max-w-sm mx-auto p-4  text-center">
+      <section className=" max-w-md mx-auto p-4  text-center sm:max-w-xl">
         <Title>My Projects</Title>;
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam
@@ -59,7 +59,8 @@ export default function Projects() {
         <Swiper
           modules={[Pagination]}
           spaceBetween={20}
-          slidesPerView={1}
+          slidesPerView={1.5}
+          centeredSlides={true}
           loop={true}
           pagination={{ clickable: true }}
           onSwiper={(swiper) => console.log(swiper)}
