@@ -12,13 +12,15 @@ export default function Button({
   children,
   handleFunction,
   variant = "primary",
+  className = "",
 }) {
   return (
     <button
       onClick={handleFunction}
       className={clsx(
         "rounded-md px-4 py-2 font-poppins font-normal text-base tracking-wide transition-colors duration-200",
-        buttonStyles[variant]
+        buttonStyles[variant],
+        className
       )}
     >
       {children}
