@@ -6,6 +6,7 @@ const buttonStyles = {
     "bg-[#ffffff] hover:bg-[#FD6F00] hover:text-white  active:bg-[#cc5002] text-black border !rounded-xl border-gray-400",
   outline:
     "border border-[#fd6f00] text-[#fd6f00] hover:bg-[#fd6f00] hover:text-white",
+  text: "hover:underline active:text-slate-600",
 };
 
 export default function Button({
