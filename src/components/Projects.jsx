@@ -37,25 +37,26 @@ const projects = [
 ];
 export default function Projects() {
   return (
-    <>
-      <section className=" max-w-md mx-auto p-4  text-center sm:max-w-xl">
-        <Title>My Projects</Title>;
-        <Paragraph>
-          Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam
-          mauris est risus lectus. Phasellus consequat urna tellus
-        </Paragraph>
-        <div className="p-4  overflow-x-auto whitespace-nowrap space-x-3">
-          {buttons.map((button, index) => {
-            return (
-              <Button
-                key={index}
-                variant="secondary"
-              >
-                {button.text}
-              </Button>
-            );
-          })}
-        </div>
+    <section className=" max-w-md mx-auto p-4  text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl">
+      <div></div>
+      <Title>My Projects</Title>;
+      <Paragraph>
+        Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris
+        est risus lectus. Phasellus consequat urna tellus
+      </Paragraph>
+      <div className="p-4  overflow-x-auto whitespace-nowrap space-x-3">
+        {buttons.map((button, index) => {
+          return (
+            <Button
+              key={index}
+              variant="secondary"
+            >
+              {button.text}
+            </Button>
+          );
+        })}
+      </div>
+      <div className="lg:hidden">
         <Swiper
           modules={[Pagination]}
           spaceBetween={20}
@@ -78,7 +79,19 @@ export default function Projects() {
             );
           })}
         </Swiper>
-      </section>
-    </>
+      </div>
+      <div className="lg:flex hidden">
+        {projects.map((project, index) => {
+          return (
+            <ProjectCard
+              type={project.type}
+              title={project.title}
+              image={project.src}
+              key={index}
+            />
+          );
+        })}
+      </div>
+    </section>
   );
 }

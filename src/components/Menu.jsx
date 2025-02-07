@@ -1,79 +1,13 @@
 import { useState } from "react";
-import {
-  XMarkIcon,
-  HomeIcon,
-  InformationCircleIcon,
-  BriefcaseIcon,
-  BuildingOfficeIcon,
-  CheckBadgeIcon,
-  ChatBubbleLeftRightIcon,
-} from "@heroicons/react/24/solid";
-import { Bars3Icon } from "@heroicons/react/24/solid";
+import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid";
 
-export default function OffCanvas() {
+export default function OffCanvas({ links, className = "" }) {
   const [isOpen, setIsOpen] = useState(false); // useState cambia el estado de un componente renderizado
 
   const toggleDrawer = () => setIsOpen(!isOpen); // Disparador, funcion de cerrar y abrir el offCanvas
 
-  const links = [
-    {
-      link: "Home",
-      icon: (
-        <HomeIcon
-          width={24}
-          height={24}
-        />
-      ),
-    },
-    {
-      link: "About me",
-      icon: (
-        <InformationCircleIcon
-          width={24}
-          height={24}
-        />
-      ),
-    },
-    {
-      link: "Services",
-      icon: (
-        <BriefcaseIcon
-          width={24}
-          height={24}
-        />
-      ),
-    },
-    {
-      link: "Projects",
-      icon: (
-        <BuildingOfficeIcon
-          width={24}
-          height={24}
-        />
-      ),
-    },
-    {
-      link: "Testimonials",
-      icon: (
-        <CheckBadgeIcon
-          width={24}
-          height={24}
-        />
-      ),
-    },
-    {
-      link: "Contact",
-      icon: (
-        <ChatBubbleLeftRightIcon
-          width={24}
-          height={24}
-        />
-      ),
-    },
-  ];
   return (
-    <div className="relative">
-      {" "}
+    <div className={` ${className}`}>
       {/**Para la super posicion de elementos se usa relative */}
       {/* Botón que abre el drawer */}
       <button onClick={toggleDrawer}>

@@ -19,7 +19,7 @@ export default function Button({
     <button
       onClick={handleFunction}
       className={clsx(
-        "rounded-md px-4 py-2 font-poppins font-normal text-base tracking-wide transition-colors duration-200 sm:text-lg",
+        "rounded-md px-4 py-2 font-poppins font-normal text-base tracking-wide transition-colors duration-200 sm:text-lg ",
         buttonStyles[variant],
         className
       )}
