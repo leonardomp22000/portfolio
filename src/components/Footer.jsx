@@ -10,9 +10,9 @@ const socialNetwork = [
 
 export default function Footer() {
   return (
-    <>
+    <footer>
       <section className="bg-[#e2e2e2] py-10">
-        <div className="mx-auto max-w-md text-center sm:max-w-xl">
+        <div className="mx-auto max-w-md text-center sm:max-w-xl md:max-w-2xl">
           {services.map((service, index) => {
             return (
               <Button
@@ -46,15 +46,15 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <section className="bg-[#545454] text-center">
-        <p className="p-4 text-white text-base font-normal font-poppins tracking-wide">
+      <section className="bg-[#545454] text-center text-base md:text-lg">
+        <p className="p-4 text-white  font-normal font-poppins tracking-wide">
           © 2023
-          <span className="text-[#e86c0a] font-bold font-poppins text-base">
+          <span className="text-[#e86c0a] font-bold font-poppins ">
             FawziUiUx
           </span>
           All Rights Reserved , Inc.
         </p>
       </section>
-    </>
+    </footer>
   );
 }

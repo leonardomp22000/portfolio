@@ -2,7 +2,7 @@ export default function Skill({ children, skillLevel }) {
   return (
     <div className="w-full h-10 relative">
       {/* Título de la habilidad */}
-      <div className="h-[23.80px] left-0 top-[-4px] absolute text-black text-base font-semibold font-['Poppins'] tracking-wide sm:text-base">
+      <div className="h-[23.80px] left-0 top-[-4px] md:top-[-8px] absolute text-black text-base font-semibold font-['Poppins'] tracking-wide sm:text-base md:text-lg">
         {children}
       </div>
 
