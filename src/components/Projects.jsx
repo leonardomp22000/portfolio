@@ -37,7 +37,8 @@ const projects = [
 ];
 export default function Projects() {
   return (
-    <section className=" max-w-md mx-auto p-4  text-center sm:max-w-xl md:max-w-2xl">
+    <section className=" max-w-md mx-auto p-4  text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl">
+      <div></div>
       <Title>My Projects</Title>;
       <Paragraph>
         Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris
@@ -55,28 +56,42 @@ export default function Projects() {
           );
         })}
       </div>
-      <Swiper
-        modules={[Pagination]}
-        spaceBetween={20}
-        slidesPerView={1.5}
-        centeredSlides={true}
-        loop={true}
-        pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
-      >
+      <div className="lg:hidden">
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={20}
+          slidesPerView={1.5}
+          centeredSlides={true}
+          loop={true}
+          pagination={{ clickable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+        >
+          {projects.map((project, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <ProjectCard
+                  type={project.type}
+                  title={project.title}
+                  image={project.src}
+                />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+      <div className="lg:flex hidden">
         {projects.map((project, index) => {
           return (
-            <SwiperSlide key={index}>
-              <ProjectCard
-                type={project.type}
-                title={project.title}
-                image={project.src}
-              />
-            </SwiperSlide>
+            <ProjectCard
+              type={project.type}
+              title={project.title}
+              image={project.src}
+              key={index}
+            />
           );
         })}
-      </Swiper>
+      </div>
     </section>
   );
 }
