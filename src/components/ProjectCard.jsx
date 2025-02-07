@@ -12,10 +12,10 @@ export default function ProjectCard({ image, type, title }) {
           className="mx-auto"
         />
         <div className=" flex flex-col gap-2 py-4">
-          <h5 className="text-[#fd6f00] text-xs font-normal font-poppins tracking-tight">
+          <h5 className="text-[#fd6f00] text-xs font-normal font-poppins tracking-tight sm:text-sm md:text-base">
             {type}
           </h5>
-          <h6 className="text-black text-base font-bold font-poppins tracking-wide">
+          <h6 className="text-black text-base font-bold font-poppins tracking-wide sm:text-lg md:text-xl">
             {title}
           </h6>
         </div>
