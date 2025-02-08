@@ -12,10 +12,10 @@ import { Pagination } from "swiper/modules";
 
 const buttons = [
   { text: "All" },
-  { text: "UI/UX" },
-  { text: "WebDesign" },
-  { text: "App Design" },
-  { text: "Graphic Design" },
+  { text: "Mechatronic" },
+  { text: "Software" },
+  // { text: "App Design" },
+  // { text: "Graphic Design" },
 ];
 
 const projects = [
@@ -37,12 +37,15 @@ const projects = [
 ];
 export default function Projects() {
   return (
-    <section className=" max-w-md mx-auto p-4  text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl">
-      <div></div>
+    <section
+      id="projects"
+      className=" max-w-md mx-auto p-4  text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl"
+    >
       <Title>My Projects</Title>;
       <Paragraph>
-        Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris
-        est risus lectus. Phasellus consequat urna tellus
+        Here you will find the Mechatronic and Software projects that I have
+        designed and implemented. Feel free to contact me if you would like to
+        review any of them in more detail.
       </Paragraph>
       <div className="p-4  overflow-x-auto whitespace-nowrap space-x-3">
         {buttons.map((button, index) => {

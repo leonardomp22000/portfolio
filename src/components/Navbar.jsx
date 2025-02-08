@@ -19,7 +19,8 @@ import {
 
 const links = [
   {
-    link: "Home",
+    href: "#home",
+    text: "Home",
     icon: (
       <HomeIcon
         width={24}
@@ -28,7 +29,8 @@ const links = [
     ),
   },
   {
-    link: "About me",
+    href: "#aboutMe",
+    text: "About me",
     icon: (
       <InformationCircleIcon
         width={24}
@@ -37,7 +39,8 @@ const links = [
     ),
   },
   {
-    link: "Services",
+    href: "#services",
+    text: "Services",
     icon: (
       <BriefcaseIcon
         width={24}
@@ -46,7 +49,8 @@ const links = [
     ),
   },
   {
-    link: "Projects",
+    href: "#projects",
+    text: "Projects",
     icon: (
       <BuildingOfficeIcon
         width={24}
@@ -54,17 +58,10 @@ const links = [
       />
     ),
   },
+
   {
-    link: "Testimonials",
-    icon: (
-      <CheckBadgeIcon
-        width={24}
-        height={24}
-      />
-    ),
-  },
-  {
-    link: "Contact",
+    href: "#contact",
+    text: "Contact",
     icon: (
       <ChatBubbleLeftRightIcon
         width={24}
@@ -76,7 +73,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <nav className=" p-4 max-w-md flex justify-end gap-4 mx-auto items-end sm:max-w-xl md:max-w-2xl lg:max-w-5xl lg:py-7">
+    <nav className=" p-4 max-w-md flex justify-end gap-4 mx-auto items-end sm:max-w-xl md:max-w-2xl lg:max-w-5xl lg:py-4 xl:max-w-6xl ">
       <Button
         className="lg:hidden "
         handleFunction={download}
@@ -91,7 +88,9 @@ export default function Navbar() {
         {links.map((link, index) => {
           return (
             <li key={index}>
-              <Button variant="text">{link.link}</Button>
+              <a href={link.href}>
+                <Button variant="text">{link.text}</Button>
+              </a>
             </li>
           );
         })}

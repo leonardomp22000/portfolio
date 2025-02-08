@@ -4,11 +4,15 @@ import Input from "./Input";
 import Button from "./Button";
 export default function CTA() {
   return (
-    <section className="mx-auto max-w-md text-center p-4 flex flex-col gap-5 sm:max-w-xl md:max-w-2xl lg:max-w-5xl ">
-      <Title> Lets Design Together</Title>
+    <section
+      id="contact"
+      className="mx-auto max-w-md text-center p-4 flex flex-col gap-5 sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-5xl "
+    >
+      <Title> Lets Create Something Incredible</Title>
       <Paragraph>
-        Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
-        lectus netus in. Aliquet donec morbi convallis pretium
+        If you require more information about what I do, have an interesting
+        project or one of my projects caught your attention, let me know by
+        leaving your email, I will contact you as soon as possible.
       </Paragraph>
 
       <div className="  lg:flex lg:gap-4 lg:max-w-2xl lg:mx-auto lg:items-end ">
