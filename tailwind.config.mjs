@@ -12,9 +12,9 @@ export default {
         foreground: "var(--foreground)",
 
         primary: {
-          main: "#fd6f00",
-          hover: "#ff890a",
-          active: "#cc5002",
+          main: "#1d70ac", // #163853      fd6f00
+          hover: "#2c8ecb", // #2c8ecb     #ff890a
+          active: " #195a8b  ", // #195a8b        #cc5002
         }, // Puedes definir el color como una variable
         secondary: "#FF4081",
         customGray: "#B0BEC5",
