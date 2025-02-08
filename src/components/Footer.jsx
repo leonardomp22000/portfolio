@@ -59,7 +59,7 @@ export default function Footer() {
       <section className="bg-[#545454] text-center text-base md:text-lg">
         <p className="p-4 text-white  font-normal font-poppins tracking-wide">
           © 2023{" "}
-          <span className="text-[#e86c0a] font-bold font-poppins ">
+          <span className="text-primary-main font-bold font-poppins ">
             Leonardo Meza
           </span>{" "}
           All Rights Reserved , Inc.

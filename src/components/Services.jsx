@@ -1,6 +1,8 @@
 import Title from "./Title";
 import Paragraph from "./Paragraph";
 import ServicesCard from "./ServicesCard";
+import { useState } from "react";
+import Button from "./Button";
 
 import { Pagination } from "swiper/modules";
 
@@ -9,6 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import clsx from "clsx";
 
 const services = [
   {
@@ -39,6 +42,7 @@ const services = [
   ,
 ];
 export default function Services() {
+  const [showText, setShowText] = useState(false);
   return (
     <section
       id="services"
@@ -47,7 +51,12 @@ export default function Services() {
       <div className="flex flex-col gap-4">
         <Title>Services</Title>
 
-        <Paragraph className="text-start">
+        <Paragraph
+          className={clsx(
+            "text-start",
+            showText ? "line-clamp-none" : "line-clamp-4"
+          )}
+        >
           I offer a wide range of specialized services, including the design and
           development of high-quality websites, such as landing pages and
           informational sites, as well as advanced programming and comprehensive
@@ -65,6 +74,15 @@ export default function Services() {
           technological systems, ensuring results that exceed expectations and
           contribute to the continuous growth of the organization.
         </Paragraph>
+        <Button
+          handleFunction={() => {
+            setShowText(!showText);
+          }}
+          variant="text"
+          className="text-primary-main"
+        >
+          {showText ? "Ver menos" : "Ver mas"}
+        </Button>
 
         <div className="lg:hidden">
           <Swiper

@@ -12,7 +12,7 @@ export default function HeroSection() {
         <h6 className="text-black text-base font-semibold font-poppins tracking-wide  sm:text-lg md:text-xl ">
           Hi I am
         </h6>
-        <h3 className="text-[#fd6f00] text-xl font-semibold font-poppins tracking-wide sm:text-2xl md:text-2xl ">
+        <h3 className=" text-primary-main text-xl font-semibold font-poppins tracking-wide sm:text-2xl md:text-2xl ">
           Leonardo Meza
         </h3>
 
@@ -46,29 +46,28 @@ export default function HeroSection() {
 
         <Paragraph>
           Hi! I am Leonardo, Ingeniero Mecatronico & FullStack Js developer. If
-          you want to know more, I'll explain a little
+          you want to know more, I'll explain a little{" "}
           <a
-            className="text-orange-400 hover:underline "
-            href="#"
+            className="text-primary-main hover:text-primary-hover active:text-primary-active  hover:underline "
+            href="#aboutMe"
           >
             {" "}
-            about myself
-          </a>{" "}
-          , you can also take a look at the
+            about myself{" "}
+          </a>
+          {"aboutMe"}, you can also take a look at the
           <a
-            className="text-orange-400 hover:underline"
-            href="#"
+            className="text-primary-main hover:text-primary-hover active:text-primary-active hover:underline"
+            href="#services"
           >
             {" "}
             services
           </a>{" "}
           I offer and find out how they can help you, or if you prefer, take a
-          look at my
+          look at my{" "}
           <a
-            className="text-orange-400 hover:underline"
-            href="#"
+            className="text-primary-main hover:text-primary-hover active:text-primary-active  hover:underline"
+            href={"#projects"}
           >
-            {" "}
             portfolio
           </a>{" "}
           where you can see the projects I have done so far in an academic way.

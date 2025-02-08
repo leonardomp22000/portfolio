@@ -62,7 +62,7 @@ export default function AboutMe() {
           handleFunction={() => {
             setShowFullText(!showFullText);
           }}
-          className="text-orange-600"
+          className="text-primary-main"
           variant="text"
         >
           {showFullText ? "Ver mas" : "Ver menos"}
