@@ -1,11 +1,20 @@
 import Button from "./Button";
 import Image from "next/image";
 
-const services = ["Home", "About Me", "Services", "Projects", "Contact"];
+const services = [
+  { text: "Home", href: "#home" },
+  { text: "About Me", href: "#aboutMe" },
+  { text: "Services", href: "#services" },
+  { text: "Projects", href: "#projects" },
+  { text: "Contact", href: "#contact" },
+];
 const socialNetwork = [
-  { image: "images/LinkedIn.svg", ref: "#" },
-  { image: "images/Instagram.svg", ref: "#" },
-  { image: "/images/Github.svg", ref: "#" },
+  { image: "images/LinkedIn.svg", ref: "#https://github.com/leonardomp22000" },
+  {
+    image: "images/Instagram.svg",
+    ref: "https://www.instagram.com/leonardo_meza2200/",
+  },
+  { image: "/images/Github.svg", ref: "https://github.com/leonardomp22000" },
 ];
 
 export default function Footer() {
@@ -15,12 +24,13 @@ export default function Footer() {
         <div className="mx-auto max-w-md text-center sm:max-w-xl md:max-w-2xl">
           {services.map((service, index) => {
             return (
-              <Button
+              <a
                 key={index}
-                variant="text"
+                href={service.href}
               >
-                {service}
-              </Button>
+                {" "}
+                <Button variant="text">{service.text}</Button>
+              </a>
             );
           })}
         </div>
@@ -48,10 +58,10 @@ export default function Footer() {
       </section>
       <section className="bg-[#545454] text-center text-base md:text-lg">
         <p className="p-4 text-white  font-normal font-poppins tracking-wide">
-          © 2023
-          <span className="text-[#e86c0a] font-bold font-poppins ">
-            FawziUiUx
-          </span>
+          © 2023{" "}
+          <span className="text-primary-main font-bold font-poppins ">
+            Leonardo Meza
+          </span>{" "}
           All Rights Reserved , Inc.
         </p>
       </section>

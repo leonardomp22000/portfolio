@@ -10,6 +10,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+
+        primary: {
+          main: "#fd6f00", //
+          hover: "#ff890a",
+          active: "#cc5002",
+        }, // Puedes definir el color como una variable
+        secondary: "#FF4081",
+        customGray: "#B0BEC5",
       },
       fontFamily: {
         poppins: "var(--font-poppins)", // Usa la variable de la fuente
