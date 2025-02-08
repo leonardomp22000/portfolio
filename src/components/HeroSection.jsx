@@ -45,8 +45,8 @@ export default function HeroSection() {
         />
 
         <Paragraph>
-          Hi! I am Leonardo, Ingeniero Mecatronico & FullStack Js developer. If
-          you want to know more, I'll explain a little{" "}
+          Hi! I am Leonardo, Mechatronic engineer & FullStack JS developer Jr.
+          If you want to know more, I'll explain a little{" "}
           <a
             className="text-primary-main hover:text-primary-hover active:text-primary-active  hover:underline "
             href="#aboutMe"
@@ -74,7 +74,10 @@ export default function HeroSection() {
         </Paragraph>
 
         <div className="text-center p-4">
-          <Button handleFunction={() => console.log("Hola")}>Hire Me</Button>
+          <a href="#contact">
+            {" "}
+            <Button handleFunction={() => console.log("Hola")}>Hire Me</Button>
+          </a>
         </div>
       </div>
 
