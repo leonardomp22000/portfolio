@@ -9,7 +9,10 @@ const services = [
   { text: "Contact", href: "#contact" },
 ];
 const socialNetwork = [
-  { image: "images/LinkedIn.svg", ref: "#https://github.com/leonardomp22000" },
+  {
+    image: "images/LinkedIn.svg",
+    ref: "linkedin.com/in/leonardo-josbad-meza-pantoja-336156252",
+  },
   {
     image: "images/Instagram.svg",
     ref: "https://www.instagram.com/leonardo_meza2200/",
@@ -62,7 +65,7 @@ export default function Footer() {
           <span className="text-primary-main font-bold font-poppins ">
             Leonardo Meza
           </span>{" "}
-          All Rights Reserved , Inc.
+          All Rights Reserved, Inc.
         </p>
       </section>
     </footer>
