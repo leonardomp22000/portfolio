@@ -62,7 +62,7 @@ export default function Footer() {
           <span className="text-primary-main font-bold font-poppins ">
             Leonardo Meza
           </span>{" "}
-          All Rights Reserved , Inc.
+          All Rights Reserved, Inc.
         </p>
       </section>
     </footer>

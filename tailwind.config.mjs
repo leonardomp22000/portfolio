@@ -12,7 +12,7 @@ export default {
         foreground: "var(--foreground)",
 
         primary: {
-          main: "#fd6f00", //
+          main: "#fd6f00",
           hover: "#ff890a",
           active: "#cc5002",
         }, // Puedes definir el color como una variable
