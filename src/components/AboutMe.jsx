@@ -31,7 +31,7 @@ export default function AboutMe() {
         <Paragraph
           className={clsx(
             "text-start",
-            showFullText ? "line-clamp-4" : "line-clamp-none"
+            showFullText ? "line-clamp-none:" : "line-clamp-4"
           )}
         >
           I began my studies in Mechatronics Engineering at the Faculty of
@@ -65,7 +65,7 @@ export default function AboutMe() {
           className="text-primary-main"
           variant="text"
         >
-          {showFullText ? "Ver mas" : "Ver menos"}
+          {showFullText ? "Ver menos" : "Ver mas"}
         </Button>
 
         <Image
