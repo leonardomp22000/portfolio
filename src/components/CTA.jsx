@@ -15,9 +15,17 @@ export default function CTA() {
         leaving your email, I will contact you as soon as possible.
       </Paragraph>
 
-      <div className="  lg:flex lg:gap-4 lg:max-w-2xl lg:mx-auto lg:items-end ">
-        <div className="w-full">
-          <Input>Enter your email</Input>
+      <div className="  lg:flex lg:flex-col lg:gap-4 lg:max-w-2xl lg:mx-auto w-full  ">
+        <div className="w-full flex flex-col gap-3">
+          <Input placeholder="Enter your name " />
+          <Input placeholder="Enter your email" />
+
+          <textarea
+            className="border w-full p-4 rounded-2xl border-[#AFAFAF] bg-[#F8F8F8]"
+            name="Message"
+            id="message"
+            placeholder="Message"
+          />
         </div>
 
         <div className="shrink-0 mt-4">
