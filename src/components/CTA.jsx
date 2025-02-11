@@ -13,7 +13,7 @@ export default function CTA() {
     { setSubmitting, setErrors, resetForm }
   ) => {
     try {
-      const endpoint = "http://localhost:8080/contact";
+      const endpoint = "https://portfolio-api-gilt-theta.vercel.app/";
 
       const response = await fetch(endpoint, {
         method: "POST",
