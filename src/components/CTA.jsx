@@ -5,6 +5,8 @@ import Button from "./Button";
 import { Formik, Form } from "formik";
 import { contactSchema } from "../hooks/validationSchemas";
 import TextArea from "./TextArea";
+import { Toaster, toast } from "react-hot-toast";
+
 export default function CTA() {
   const handleSubmit = async (
     values,
@@ -22,7 +24,7 @@ export default function CTA() {
       });
       const data = await response.json();
       if (!data.success) throw new Error(data.error || "Error en el envío");
-
+      toast.success("Mensaje enviado con éxito");
       resetForm();
     } catch (error) {
       console.error("Error de conexion", error);
@@ -50,35 +52,42 @@ export default function CTA() {
             validationSchema={contactSchema}
             onSubmit={handleSubmit}
           >
-            <Form className="w-full flex flex-col gap-3">
-              <Input
-                name="name"
-                type="text"
-                placeholder="Enter your name "
-              />
-              <Input
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-              />
+            {({ isSubmitting }) => (
+              <Form className="w-full flex flex-col gap-3">
+                <Input
+                  name="name"
+                  type="text"
+                  placeholder="Enter your name "
+                />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email"
+                />
 
-              <TextArea
-                name="message"
-                placeholder="Message"
-              />
+                <TextArea
+                  name="message"
+                  placeholder="Message"
+                />
 
-              <div className="shrink-0 mt-4">
-                <Button
-                  className="px-11 py-4 font-semibold"
-                  type="submit"
-                >
-                  Contact Me
-                </Button>
-              </div>
-            </Form>
+                <div className="shrink-0 mt-4">
+                  <Button
+                    className="px-11 py-4 font-semibold"
+                    type="submit"
+                  >
+                    {isSubmitting ? "Sending" : "Contact Me"}
+                  </Button>
+                </div>
+              </Form>
+            )}
           </Formik>
         </div>
       </div>
+
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+      />
     </section>
   );
 }
