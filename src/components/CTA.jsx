@@ -2,7 +2,37 @@ import Title from "./Title";
 import Paragraph from "./Paragraph";
 import Input from "./Input";
 import Button from "./Button";
+import { Formik, Form } from "formik";
+import { contactSchema } from "../hooks/validationSchemas";
+import TextArea from "./TextArea";
+import { Toaster, toast } from "react-hot-toast";
+
 export default function CTA() {
+  const handleSubmit = async (
+    values,
+    { setSubmitting, setErrors, resetForm }
+  ) => {
+    try {
+      const endpoint = "http://localhost:8080/contact";
+
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      const data = await response.json();
+      if (!data.success) throw new Error(data.error || "Error en el envío");
+      toast.success("Mensaje enviado con éxito");
+      resetForm();
+    } catch (error) {
+      console.error("Error de conexion", error);
+      setErrors({ general: "Error al conectar con el servidor" });
+    } finally {
+      setSubmitting(false);
+    }
+  };
   return (
     <section
       id="contact"
@@ -15,15 +45,49 @@ export default function CTA() {
         leaving your email, I will contact you as soon as possible.
       </Paragraph>
 
-      <div className="  lg:flex lg:gap-4 lg:max-w-2xl lg:mx-auto lg:items-end ">
-        <div className="w-full">
-          <Input>Enter your email</Input>
-        </div>
+      <div className="  lg:flex lg:flex-col lg:gap-4 lg:max-w-2xl lg:mx-auto w-full  ">
+        <div className="w-full flex flex-col gap-3">
+          <Formik
+            initialValues={{ email: "", name: "", message: "" }}
+            validationSchema={contactSchema}
+            onSubmit={handleSubmit}
+          >
+            {({ isSubmitting }) => (
+              <Form className="w-full flex flex-col gap-3">
+                <Input
+                  name="name"
+                  type="text"
+                  placeholder="Enter your name "
+                />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email"
+                />
 
-        <div className="shrink-0 mt-4">
-          <Button className="px-11 py-4 font-semibold">Contact Me</Button>
+                <TextArea
+                  name="message"
+                  placeholder="Message"
+                />
+
+                <div className="shrink-0 mt-4">
+                  <Button
+                    className="px-11 py-4 font-semibold"
+                    type="submit"
+                  >
+                    {isSubmitting ? "Sending" : "Contact Me"}
+                  </Button>
+                </div>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
+
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+      />
     </section>
   );
 }

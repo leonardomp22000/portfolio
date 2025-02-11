@@ -56,9 +56,11 @@ export default function OffCanvas({ links, className = "" }) {
           {links.map((link, index) => {
             return (
               <li key={index}>
-                <div className="flex items-center gap-2 p-2 rounded-md hover:bg-orange-100 hover:text-orange-500 transition-colors cursor-pointer text-black/80">
-                  {link.icon} {link.link}
-                </div>
+                <a href={link.href}>
+                  <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary-main hover:text-white transition-colors cursor-pointer text-black/80">
+                    {link.icon} {link.text}
+                  </div>
+                </a>
               </li>
             );
           })}
