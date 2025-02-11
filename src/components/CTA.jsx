@@ -29,6 +29,7 @@ export default function CTA() {
     } catch (error) {
       console.error("Error de conexion", error);
       setErrors({ general: "Error al conectar con el servidor" });
+      toast.error("El mensaje no pudo ser enviado");
     } finally {
       setSubmitting(false);
     }
