@@ -2,7 +2,35 @@ import Title from "./Title";
 import Paragraph from "./Paragraph";
 import Input from "./Input";
 import Button from "./Button";
+import { Formik, Form } from "formik";
+import { contactSchema } from "../hooks/validationSchemas";
+import TextArea from "./TextArea";
 export default function CTA() {
+  const handleSubmit = async (
+    values,
+    { setSubmitting, setErrors, resetForm }
+  ) => {
+    try {
+      const endpoint = "http://localhost:8080/contact";
+
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      const data = await response.json();
+      if (!data.success) throw new Error(data.error || "Error en el envío");
+
+      resetForm();
+    } catch (error) {
+      console.error("Error de conexion", error);
+      setErrors({ general: "Error al conectar con el servidor" });
+    } finally {
+      setSubmitting(false);
+    }
+  };
   return (
     <section
       id="contact"
@@ -17,19 +45,38 @@ export default function CTA() {
 
       <div className="  lg:flex lg:flex-col lg:gap-4 lg:max-w-2xl lg:mx-auto w-full  ">
         <div className="w-full flex flex-col gap-3">
-          <Input placeholder="Enter your name " />
-          <Input placeholder="Enter your email" />
+          <Formik
+            initialValues={{ email: "", name: "", message: "" }}
+            validationSchema={contactSchema}
+            onSubmit={handleSubmit}
+          >
+            <Form className="w-full flex flex-col gap-3">
+              <Input
+                name="name"
+                type="text"
+                placeholder="Enter your name "
+              />
+              <Input
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+              />
 
-          <textarea
-            className="border w-full p-4 rounded-2xl border-[#AFAFAF] bg-[#F8F8F8]"
-            name="Message"
-            id="message"
-            placeholder="Message"
-          />
-        </div>
+              <TextArea
+                name="message"
+                placeholder="Message"
+              />
 
-        <div className="shrink-0 mt-4">
-          <Button className="px-11 py-4 font-semibold">Contact Me</Button>
+              <div className="shrink-0 mt-4">
+                <Button
+                  className="px-11 py-4 font-semibold"
+                  type="submit"
+                >
+                  Contact Me
+                </Button>
+              </div>
+            </Form>
+          </Formik>
         </div>
       </div>
     </section>
