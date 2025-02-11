@@ -13,7 +13,7 @@ export default function CTA() {
     { setSubmitting, setErrors, resetForm }
   ) => {
     try {
-      const endpoint = "https://portfolio-api-gilt-theta.vercel.app/";
+      const endpoint = "https://portfolio-api-gilt-theta.vercel.app/contact";
 
       const response = await fetch(endpoint, {
         method: "POST",
@@ -29,6 +29,7 @@ export default function CTA() {
     } catch (error) {
       console.error("Error de conexion", error);
       setErrors({ general: "Error al conectar con el servidor" });
+      toast.error("El mensaje no pudo ser enviado");
     } finally {
       setSubmitting(false);
     }
