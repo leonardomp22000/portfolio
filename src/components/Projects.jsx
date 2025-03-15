@@ -39,7 +39,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className=" max-w-md mx-auto p-4  text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl"
+      className="mx-auto max-w-md p-4 text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl"
     >
       <Title>My Projects</Title>;
       <Paragraph>
@@ -47,13 +47,10 @@ export default function Projects() {
         designed and implemented. Feel free to contact me if you would like to
         review any of them in more detail.
       </Paragraph>
-      <div className="p-4  overflow-x-auto whitespace-nowrap space-x-3">
+      <div className="space-x-3 overflow-x-auto whitespace-nowrap p-4">
         {buttons.map((button, index) => {
           return (
-            <Button
-              key={index}
-              variant="secondary"
-            >
+            <Button key={index} variant="secondary">
               {button.text}
             </Button>
           );
@@ -83,7 +80,7 @@ export default function Projects() {
           })}
         </Swiper>
       </div>
-      <div className="lg:flex hidden">
+      <div className="hidden lg:flex">
         {projects.map((project, index) => {
           return (
             <ProjectCard

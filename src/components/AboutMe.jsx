@@ -23,15 +23,15 @@ export default function AboutMe() {
   return (
     <section
       id="aboutMe"
-      className="p-4 max-w-md mx-auto text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl lg:flex lg:flex-row-reverse  lg:justify-between lg:items-center lg:my-7 xl:max-w-6xl"
+      className="mx-auto max-w-md p-4 text-center sm:max-w-xl md:max-w-2xl lg:my-7 lg:flex lg:max-w-5xl lg:flex-row-reverse lg:items-center lg:justify-between xl:max-w-6xl"
     >
-      <div className="lg:max-w-2xl lg:text-center  flex flex-col gap-4 text-center">
+      <div className="flex flex-col gap-4 text-center lg:max-w-2xl lg:text-center">
         <Title> About Me </Title>
 
         <Paragraph
           className={clsx(
             "text-start",
-            showFullText ? "line-clamp-none:" : "line-clamp-4"
+            showFullText ? "line-clamp-none:" : "line-clamp-4",
           )}
         >
           I began my studies in Mechatronics Engineering at the Faculty of
@@ -77,13 +77,10 @@ export default function AboutMe() {
         />
 
         <div>
-          <div className="max-w-sm md:max-w-lg mx-auto lg:mx-0 lg:max-w-full ">
+          <div className="mx-auto max-w-sm md:max-w-lg lg:mx-0 lg:max-w-full">
             {skills.map((skill, index) => {
               return (
-                <Skill
-                  skillLevel={skill.level}
-                  key={index}
-                >
+                <Skill skillLevel={skill.level} key={index}>
                   {skill.name}
                 </Skill>
               );
@@ -97,7 +94,7 @@ export default function AboutMe() {
         alt="AboutMeImage"
         width={300}
         height={300}
-        className=" sm:w-80 shrink-0 lg:w-[400px] hidden lg:block "
+        className="hidden shrink-0 sm:w-80 lg:block lg:w-[400px]"
       />
     </section>
   );

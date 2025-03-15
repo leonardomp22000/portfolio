@@ -72,7 +72,7 @@ export default function OpenCV() {
       0,
       0,
       canvasRef.current.width,
-      canvasRef.current.height
+      canvasRef.current.height,
     );
 
     const imageData = canvasRef.current.toDataURL("image/jpeg");
@@ -93,18 +93,12 @@ export default function OpenCV() {
         ref={videoRef}
         autoPlay
         playsInline
-        className="w-1/2 border rounded-lg"
+        className="w-1/2 rounded-lg border"
       />
-      <canvas
-        ref={canvasRef}
-        className="hidden"
-      ></canvas>
-      <div className="w-1/2 border rounded-lg">
+      <canvas ref={canvasRef} className="hidden"></canvas>
+      <div className="w-1/2 rounded-lg border">
         {processedImage ? (
-          <img
-            src={processedImage}
-            alt="Processed"
-          />
+          <img src={processedImage} alt="Processed" />
         ) : (
           <p className="text-gray-500">Esperando imagen procesada...</p>
         )}

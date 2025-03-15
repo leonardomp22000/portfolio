@@ -10,7 +10,7 @@ import { Toaster, toast } from "react-hot-toast";
 export default function CTA() {
   const handleSubmit = async (
     values,
-    { setSubmitting, setErrors, resetForm }
+    { setSubmitting, setErrors, resetForm },
   ) => {
     try {
       const endpoint = "https://portfolio-api-gilt-theta.vercel.app/contact";
@@ -37,7 +37,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="mx-auto max-w-md text-center p-4 flex flex-col gap-5 sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-5xl "
+      className="mx-auto flex max-w-md flex-col gap-5 p-4 text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-5xl"
     >
       <Title> Lets Create Something Incredible</Title>
       <Paragraph>
@@ -46,36 +46,26 @@ export default function CTA() {
         leaving your email, I will contact you as soon as possible.
       </Paragraph>
 
-      <div className="  lg:flex lg:flex-col lg:gap-4 lg:max-w-2xl lg:mx-auto w-full  ">
-        <div className="w-full flex flex-col gap-3">
+      <div className="w-full lg:mx-auto lg:flex lg:max-w-2xl lg:flex-col lg:gap-4">
+        <div className="flex w-full flex-col gap-3">
           <Formik
             initialValues={{ email: "", name: "", message: "" }}
             validationSchema={contactSchema}
             onSubmit={handleSubmit}
           >
             {({ isSubmitting }) => (
-              <Form className="w-full flex flex-col gap-3">
-                <Input
-                  name="name"
-                  type="text"
-                  placeholder="Enter your name "
-                />
+              <Form className="flex w-full flex-col gap-3">
+                <Input name="name" type="text" placeholder="Enter your name " />
                 <Input
                   name="email"
                   type="email"
                   placeholder="Enter your email"
                 />
 
-                <TextArea
-                  name="message"
-                  placeholder="Message"
-                />
+                <TextArea name="message" placeholder="Message" />
 
-                <div className="shrink-0 mt-4">
-                  <Button
-                    className="px-11 py-4 font-semibold"
-                    type="submit"
-                  >
+                <div className="mt-4 shrink-0">
+                  <Button className="px-11 py-4 font-semibold" type="submit">
                     {isSubmitting ? "Sending" : "Contact Me"}
                   </Button>
                 </div>
@@ -85,10 +75,7 @@ export default function CTA() {
         </div>
       </div>
 
-      <Toaster
-        position="bottom-right"
-        reverseOrder={false}
-      />
+      <Toaster position="bottom-right" reverseOrder={false} />
     </section>
   );
 }
