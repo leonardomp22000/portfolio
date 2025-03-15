@@ -21,70 +21,39 @@ const links = [
   {
     href: "#home",
     text: "Home",
-    icon: (
-      <HomeIcon
-        width={24}
-        height={24}
-      />
-    ),
+    icon: <HomeIcon width={24} height={24} />,
   },
   {
     href: "#aboutMe",
     text: "About me",
-    icon: (
-      <InformationCircleIcon
-        width={24}
-        height={24}
-      />
-    ),
+    icon: <InformationCircleIcon width={24} height={24} />,
   },
   {
     href: "#services",
     text: "Services",
-    icon: (
-      <BriefcaseIcon
-        width={24}
-        height={24}
-      />
-    ),
+    icon: <BriefcaseIcon width={24} height={24} />,
   },
   {
     href: "#projects",
     text: "Projects",
-    icon: (
-      <BuildingOfficeIcon
-        width={24}
-        height={24}
-      />
-    ),
+    icon: <BuildingOfficeIcon width={24} height={24} />,
   },
 
   {
     href: "#contact",
     text: "Contact",
-    icon: (
-      <ChatBubbleLeftRightIcon
-        width={24}
-        height={24}
-      />
-    ),
+    icon: <ChatBubbleLeftRightIcon width={24} height={24} />,
   },
 ];
 
 export default function Navbar() {
   return (
-    <nav className=" p-4 max-w-md flex justify-end gap-4 mx-auto items-end sm:max-w-xl md:max-w-2xl lg:max-w-5xl lg:py-4 xl:max-w-6xl ">
-      <Button
-        className="lg:hidden "
-        handleFunction={download}
-      >
+    <nav className="mx-auto flex max-w-md items-end justify-end gap-4 p-4 sm:max-w-xl md:max-w-2xl lg:max-w-5xl lg:py-4 xl:max-w-6xl">
+      <Button className="lg:hidden" handleFunction={download}>
         Download CV
       </Button>
-      <Menu
-        className="lg:hidden"
-        links={links}
-      />
-      <ul className="lg:flex hidden ">
+      <Menu className="lg:hidden" links={links} />
+      <ul className="hidden lg:flex">
         {links.map((link, index) => {
           return (
             <li key={index}>
@@ -95,10 +64,7 @@ export default function Navbar() {
           );
         })}
       </ul>
-      <Button
-        className="hidden lg:block"
-        handleFunction={download}
-      >
+      <Button className="hidden lg:block" handleFunction={download}>
         Download CV
       </Button>
     </nav>

@@ -27,10 +27,7 @@ export default function Footer() {
         <div className="mx-auto max-w-md text-center sm:max-w-xl md:max-w-2xl">
           {services.map((service, index) => {
             return (
-              <a
-                key={index}
-                href={service.href}
-              >
+              <a key={index} href={service.href}>
                 {" "}
                 <Button variant="text">{service.text}</Button>
               </a>
@@ -39,13 +36,10 @@ export default function Footer() {
         </div>
 
         <div className="my-4">
-          <div className="flex gap-9 justify-center">
+          <div className="flex justify-center gap-9">
             {socialNetwork.map((network, index) => {
               return (
-                <a
-                  key={index}
-                  href={network.ref}
-                >
+                <a key={index} href={network.ref}>
                   <Image
                     src={network.image}
                     alt="Image"
@@ -60,9 +54,9 @@ export default function Footer() {
         </div>
       </section>
       <section className="bg-[#545454] text-center text-base md:text-lg">
-        <p className="p-4 text-white  font-normal font-poppins tracking-wide">
+        <p className="p-4 font-poppins font-normal tracking-wide text-white">
           © 2023{" "}
-          <span className="text-primary-main font-bold font-poppins ">
+          <span className="font-poppins font-bold text-primary-main">
             Leonardo Meza
           </span>{" "}
           All Rights Reserved, Inc.

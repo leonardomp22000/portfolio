@@ -6,18 +6,18 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className=" max-w-md sm:max-w-xl mx-auto p-4 md:max-w-2xl lg:max-w-5xl flex gap-5 lg:items-center xl:max-w-6xl"
+      className="mx-auto flex max-w-md gap-5 p-4 sm:max-w-xl md:max-w-2xl lg:max-w-5xl lg:items-center xl:max-w-6xl"
     >
       <div>
-        <h6 className="text-black text-base font-semibold font-poppins tracking-wide  sm:text-lg md:text-xl ">
+        <h6 className="font-poppins text-base font-semibold tracking-wide text-black sm:text-lg md:text-xl">
           Hi I am
         </h6>
-        <h3 className=" text-primary-main text-xl font-semibold font-poppins tracking-wide sm:text-2xl md:text-2xl ">
+        <h3 className="font-poppins text-xl font-semibold tracking-wide text-primary-main sm:text-2xl md:text-2xl">
           Leonardo Meza
         </h3>
 
         <div className="max-w-[360px] sm:max-w-none lg:mb-10 lg:h-[160px]">
-          <h1 className="text-black text-[42px] font-bold font-poppins h-[90px] leading-[50px] tracking-wider  sm:text-6xl md:h-[140px] md:text-[68px] lg:text-[74px] xl:text-[88px]">
+          <h1 className="h-[90px] font-poppins text-[42px] font-bold leading-[50px] tracking-wider text-black sm:text-6xl md:h-[140px] md:text-[68px] lg:text-[74px] xl:text-[88px]">
             <span className="text-black">
               <Typewriter
                 words={["Mechatronic Engineer", "FullStack Developer"]}
@@ -48,7 +48,7 @@ export default function HeroSection() {
           Hi! I am Leonardo, Mechatronic engineer & FullStack JS developer Jr.
           If you want to know more, I'll explain a little{" "}
           <a
-            className="text-primary-main hover:text-primary-hover active:text-primary-active  hover:underline "
+            className="text-primary-main hover:text-primary-hover hover:underline active:text-primary-active"
             href="#aboutMe"
           >
             {" "}
@@ -56,7 +56,7 @@ export default function HeroSection() {
           </a>
           {"aboutMe"}, you can also take a look at the
           <a
-            className="text-primary-main hover:text-primary-hover active:text-primary-active hover:underline"
+            className="text-primary-main hover:text-primary-hover hover:underline active:text-primary-active"
             href="#services"
           >
             {" "}
@@ -65,7 +65,7 @@ export default function HeroSection() {
           I offer and find out how they can help you, or if you prefer, take a
           look at my{" "}
           <a
-            className="text-primary-main hover:text-primary-hover active:text-primary-active  hover:underline"
+            className="text-primary-main hover:text-primary-hover hover:underline active:text-primary-active"
             href={"#projects"}
           >
             portfolio
@@ -73,7 +73,7 @@ export default function HeroSection() {
           where you can see the projects I have done so far in an academic way.
         </Paragraph>
 
-        <div className="text-center p-4">
+        <div className="p-4 text-center">
           <a href="#contact">
             {" "}
             <Button handleFunction={() => console.log("Hola")}>Hire Me</Button>
@@ -87,7 +87,7 @@ export default function HeroSection() {
         width={220}
         height={250}
         priority
-        className="mx-auto px-5 sm:w-80 shrink-0 lg:w-96 hidden lg:block "
+        className="mx-auto hidden shrink-0 px-5 sm:w-80 lg:block lg:w-96"
       />
     </section>
   );
