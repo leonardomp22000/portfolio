@@ -69,7 +69,7 @@ export default function AboutMe() {
         </Button>
 
         <Image
-          src={"/images/AboutMe.webp"}
+          src={"/images/HandCodingPerson.png"}
           alt="AboutMeImage"
           width={300}
           height={300}
@@ -90,7 +90,7 @@ export default function AboutMe() {
       </div>
 
       <Image
-        src={"/images/AboutMe.webp"}
+        src={"/images/HandCodingPerson.png"}
         alt="AboutMeImage"
         width={300}
         height={300}
