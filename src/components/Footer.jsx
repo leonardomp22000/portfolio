@@ -1,20 +1,21 @@
 import Button from "./Button";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
-  { text: "Home", href: "#home" },
-  { text: "About Me", href: "#aboutMe" },
-  { text: "Services", href: "#services" },
-  { text: "Projects", href: "#projects" },
-  { text: "Contact", href: "#contact" },
+  { text: "Home", href: "/#home" },
+  { text: "About Me", href: "/#aboutMe" },
+  { text: "Services", href: "/#services" },
+  { text: "Projects", href: "/#projects" },
+  { text: "Contact", href: "/#contact" },
 ];
 const socialNetwork = [
   {
-    image: "images/LinkedIn.svg",
-    ref: "linkedin.com/in/leonardo-josbad-meza-pantoja-336156252",
+    image: "/images/LinkedIn.svg",
+    ref: "https://www.linkedin.com/in/leonardo-josbad-meza-pantoja-336156252?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BPcanUmG1S%2B2vuhKKTGOY1g%3D%3D",
   },
   {
-    image: "images/Instagram.svg",
+    image: "/images/Instagram.svg",
     ref: "https://www.instagram.com/leonardo_meza2200/",
   },
   { image: "/images/Github.svg", ref: "https://github.com/leonardomp22000" },
@@ -27,10 +28,9 @@ export default function Footer() {
         <div className="mx-auto max-w-md text-center sm:max-w-xl md:max-w-2xl">
           {services.map((service, index) => {
             return (
-              <a key={index} href={service.href}>
-                {" "}
+              <Link key={index} href={service.href} scroll={false}>
                 <Button variant="text">{service.text}</Button>
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -55,10 +55,10 @@ export default function Footer() {
       </section>
       <section className="bg-[#545454] text-center text-base md:text-lg">
         <p className="p-4 font-poppins font-normal tracking-wide text-white">
-          © 2023{" "}
+          © 2023
           <span className="font-poppins font-bold text-primary-main">
             Leonardo Meza
-          </span>{" "}
+          </span>
           All Rights Reserved, Inc.
         </p>
       </section>

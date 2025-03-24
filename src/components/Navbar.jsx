@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Menu from "@/components/Menu";
+import Link from "next/link";
 function download() {
   const link = document.createElement("a"); // Crea un elemento a
   link.href = "/CVLeonardoMeza.pdf"; // Usa la ruta correcta Epecifica la ruta donde esta el archivo de descarga
@@ -19,28 +20,28 @@ import {
 
 const links = [
   {
-    href: "#home",
+    href: "/#home",
     text: "Home",
     icon: <HomeIcon width={24} height={24} />,
   },
   {
-    href: "#aboutMe",
+    href: "/#aboutMe",
     text: "About me",
     icon: <InformationCircleIcon width={24} height={24} />,
   },
   {
-    href: "#services",
+    href: "/#services",
     text: "Services",
     icon: <BriefcaseIcon width={24} height={24} />,
   },
   {
-    href: "#projects",
+    href: "/#projects",
     text: "Projects",
     icon: <BuildingOfficeIcon width={24} height={24} />,
   },
 
   {
-    href: "#contact",
+    href: "/#contact",
     text: "Contact",
     icon: <ChatBubbleLeftRightIcon width={24} height={24} />,
   },
@@ -57,9 +58,9 @@ export default function Navbar() {
         {links.map((link, index) => {
           return (
             <li key={index}>
-              <a href={link.href}>
+              <Link href={link.href} scroll={false}>
                 <Button variant="text">{link.text}</Button>
-              </a>
+              </Link>
             </li>
           );
         })}
