@@ -4,7 +4,9 @@ import MainPage from "@/components/Article/MainPage";
 export async function getServerSideProps(context) {
   const { slug } = context.params;
 
-  const res = await fetch(`http://localhost:8080/projects/${slug}`);
+  const res = await fetch(
+    `https://portfolioapi-0gt9.onrender.com/projects/${slug}`,
+  );
 
   if (!res.ok) {
     throw new Error(`Error en la API: ${res.status} ${res.statusText}`);

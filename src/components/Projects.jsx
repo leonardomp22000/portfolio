@@ -25,7 +25,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/projects/")
+    fetch("https://portfolioapi-0gt9.onrender.com/projects/")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Error fetching projects", err));
