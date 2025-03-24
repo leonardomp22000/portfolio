@@ -13,10 +13,7 @@ export default function OffCanvas({ links, className = "" }) {
       <button onClick={toggleDrawer}>
         {" "}
         {/** Se llama a la funcion que hace cambiar el estado. Dicha funcion tiene un setIsOpen en su interior */}
-        <Bars3Icon
-          width={30}
-          height={30}
-        />
+        <Bars3Icon width={30} height={30} />
       </button>
       {/* Drawer (OffCanvas) */}
       {/**
@@ -30,22 +27,22 @@ export default function OffCanvas({ links, className = "" }) {
        * 
        */}
       <div
-        className={`fixed top-0 right-0 z-40 h-screen p-4 w-60 bg-white shadow-lg transform transition-transform duration-300 ${
+        className={`fixed right-0 top-0 z-40 h-screen w-60 transform bg-white p-4 shadow-lg transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Encabezado */}
-        <div className="flex justify-between items-center mb-4">
-          <h5 className="text-lg font-poppins  text-black flex items-center">
+        <div className="mb-4 flex items-center justify-between">
+          <h5 className="flex items-center font-poppins text-lg text-black">
             Menu
           </h5>
 
           {/* Botón para cerrar */}
           <button
             onClick={toggleDrawer}
-            className="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg w-8 h-8 flex items-center justify-center"
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-gray-400 hover:bg-gray-200 hover:text-gray-900"
           >
-            <XMarkIcon className="w-5 h-5" />
+            <XMarkIcon className="h-5 w-5" />
             <span className="sr-only">Close menu</span>
           </button>
         </div>
@@ -57,7 +54,7 @@ export default function OffCanvas({ links, className = "" }) {
             return (
               <li key={index}>
                 <a href={link.href}>
-                  <div className="flex items-center gap-2 p-2 rounded-md hover:bg-primary-main hover:text-white transition-colors cursor-pointer text-black/80">
+                  <div className="flex cursor-pointer items-center gap-2 rounded-md p-2 text-black/80 transition-colors hover:bg-primary-main hover:text-white">
                     {link.icon} {link.text}
                   </div>
                 </a>

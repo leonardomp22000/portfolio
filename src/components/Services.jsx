@@ -46,7 +46,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="p-4 max-w-md mx-auto text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl"
+      className="mx-auto max-w-md p-4 text-center sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl"
     >
       <div className="flex flex-col gap-4">
         <Title>Services</Title>
@@ -54,7 +54,7 @@ export default function Services() {
         <Paragraph
           className={clsx(
             "text-start",
-            showText ? "line-clamp-none" : "line-clamp-4"
+            showText ? "line-clamp-none" : "line-clamp-4",
           )}
         >
           I offer a wide range of specialized services, including the design and
@@ -109,7 +109,7 @@ export default function Services() {
           </Swiper>
         </div>
 
-        <div className=" lg:flex lg:flex-wrap hidden">
+        <div className="hidden lg:flex lg:flex-wrap">
           {services.map((service, index) => {
             return (
               <ServicesCard

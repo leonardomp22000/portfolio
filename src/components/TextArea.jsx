@@ -5,7 +5,7 @@ export default function TextArea({ placeholder = "", ...props }) {
   return (
     <>
       <textarea
-        className="border w-full p-4 rounded-2xl border-[#AFAFAF] bg-[#F8F8F8]"
+        className="w-full rounded-2xl border border-[#AFAFAF] bg-[#F8F8F8] p-4"
         placeholder={placeholder}
         {...field}
         {...props}
