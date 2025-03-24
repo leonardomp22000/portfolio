@@ -6,8 +6,8 @@ export default function YoutubeEmbed({ videoUrl = "" }) {
   }
 
   return (
-    <div className="mx-auto w-full max-w-2xl">
-      <div className="relative aspect-[2/1] w-full">
+    <div className="mx-auto w-full">
+      <div className="relative aspect-[2/1] w-full md:aspect-[2.3/1]">
         <iframe
           className="h-full w-full rounded-lg"
           src={`https://www.youtube.com/embed/${videoId}`}
