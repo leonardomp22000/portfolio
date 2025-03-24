@@ -32,11 +32,11 @@ export default function HeroSection() {
           </h1>
           {/* <h2 className="text-black text-[42px] font-bold font-poppins leading-[57px] tracking-wider px-4 text-end sm:text-6xl md:text-[68px] lg:text-[78px] xl:text-[88px]">
             Engineer
-          </h2> */}
+          </h2>  ProfilePicture.webp*/}
         </div>
 
         <Image
-          src={"/images/ProfilePicture.webp"}
+          src={"/images/HandCoding.png"}
           alt="Profile picture"
           width={220}
           height={250}
@@ -82,7 +82,7 @@ export default function HeroSection() {
       </div>
 
       <Image
-        src={"/images/ProfilePicture.webp"}
+        src={"/images/HandCoding.png"}
         alt="Profile picture"
         width={220}
         height={250}
