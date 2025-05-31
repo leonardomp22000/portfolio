@@ -5,6 +5,7 @@ import Button from "../Button";
 import CardsProjectDemo from "./CardsProjectDemo";
 import CodeExplanation from "./CodeExplanation";
 import Footer from "../Footer";
+import Link from "next/link";
 import CardRelatedProjects from "./CardRelatedProjects";
 import {
   CalendarDaysIcon,
@@ -23,6 +24,8 @@ export default function MainPage({
   mainTechnologies,
   code,
   codeTitle,
+  gitHubLink,
+  liveLink,
 }) {
   return (
     <>
@@ -71,11 +74,11 @@ export default function MainPage({
                   section.content === "features" ? (
                     <div className="flex flex-col gap-4 sm:flex-row sm:justify-evenly">
                       <CardsProjectDemo
-                        cardTitle="Características principales"
+                        cardTitle="Main Features"
                         elementListCard={mainFeatures}
                       />
                       <CardsProjectDemo
-                        cardTitle="Tecnologías utilizadas"
+                        cardTitle="Main Technologies"
                         elementListCard={mainTechnologies}
                       />
                     </div>
@@ -91,23 +94,27 @@ export default function MainPage({
         <section className="mt-5 flex flex-col gap-4 rounded-lg border border-gray-400 p-4 sm:flex-row">
           <div>
             <h4 className="font-poppins text-lg font-semibold">
-              ¿Interesado en el codigo?
+              Interested in the code?
             </h4>
 
             <p className="font-poppins text-base text-black/75">
-              Revisa el repositorio completo en github para ver el codigo
-              fuente, instrucciones de instalacion y documentacion
+              Check out the full GitHub repository for source code, installation
+              instructions, and documentation.
             </p>
           </div>
           <div className="flex flex-col items-center gap-4 lg:flex-row">
-            <Button className="h-12 whitespace-nowrap">Ver en Github</Button>
-            <Button
-              className="flex h-12 items-center gap-2 whitespace-nowrap"
-              variant="outline"
-            >
-              <span>Ver en vivo</span>
-              <ArrowRightIcon width={20} />
-            </Button>
+            <Link href={gitHubLink}>
+              <Button className="h-12 whitespace-nowrap">See on Github</Button>
+            </Link>
+            <Link href={liveLink}>
+              <Button
+                className="flex h-12 items-center gap-2 whitespace-nowrap"
+                variant="outline"
+              >
+                <span>See live</span>
+                <ArrowRightIcon width={20} />
+              </Button>
+            </Link>
           </div>
         </section>
         <div className="my-5 border border-gray-300"></div>
