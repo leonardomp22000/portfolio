@@ -25,6 +25,8 @@ export default function ProjectPage({ project }) {
     <>
       <Navbar />
       <MainPage
+        gitHubLink={project.gitHubLink}
+        liveLink={project.liveLink}
         technologies={project.technologies}
         ArticleTitle={project.title}
         timeRead={project.timeRead}
